@@ -12,13 +12,12 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.testng/testng
-    testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
-    // https://mvnrepository.com/artifact/com.codeborne/selenide
-    compile group: 'com.codeborne', name: 'selenide', version: '5.12.2'
-
+    testImplementation 'com.codeborne:selenide:5.13.1'
+    
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.2"
 }
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
 
-    }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
